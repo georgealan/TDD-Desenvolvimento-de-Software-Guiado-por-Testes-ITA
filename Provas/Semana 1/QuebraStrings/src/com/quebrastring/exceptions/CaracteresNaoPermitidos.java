@@ -5,6 +5,5 @@ public class CaracteresNaoPermitidos extends Exception{
 
 	public CaracteresNaoPermitidos() {
 		super("Inválido - caracteres especiais não são permitidos, somente letras e números");		
-	}
-	
+	}	
 }

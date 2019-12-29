@@ -9,7 +9,7 @@ import com.quebrastring.exceptions.ComecaComNumerosException;
 public class CamelCase {
 
 	private static ArrayList<String> palavras;
-
+	
 	public static List<String> converterCamelCase(String original)
 			throws ComecaComNumerosException, CaracteresNaoPermitidos {
 		verificaExecoes(original);
@@ -22,7 +22,7 @@ public class CamelCase {
 		}
 		return palavras;
 	}
-
+	
 	private static void verificaExecoes(String palavra) 
 			throws ComecaComNumerosException, CaracteresNaoPermitidos {
 		String primeiraLetra = Character.toString(palavra.charAt(0));
@@ -43,7 +43,7 @@ public class CamelCase {
 	}
 
 	public static List<String> quebraString(String palavra) {
-		String[] palavrasDivididas = palavra.split("((?=[A-Z])|(?<=\\D)(?=\\d))");
+		String[] palavrasDivididas = palavra.split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])|(?<=\\D)(?=\\d)");
 		palavras = new ArrayList<>();
 		for (String p : palavrasDivididas) {
 			p = maiusculaParaMinuscula(p);
@@ -51,5 +51,4 @@ public class CamelCase {
 		}
 		return palavras;
 	}
-
 }

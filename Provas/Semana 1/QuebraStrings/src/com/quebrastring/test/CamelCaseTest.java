@@ -54,6 +54,13 @@ public class CamelCaseTest {
 	}
 	
 	@Test
+	public void palavraMinusculaSeguidaDeMaiuscula() throws Exception {
+		palavras = CamelCase.converterCamelCase("numeroCPF");
+		assertEquals("numero", palavras.get(0));
+		assertEquals("CPF", palavras.get(1));
+	}
+	
+	@Test
 	public void palavraComNumeroNoMeio() throws Exception {
 		palavras = CamelCase.converterCamelCase("recupera10Primeiros");
 		assertEquals("recupera", palavras.get(0));

@@ -6,6 +6,4 @@ public class ComecaComNumerosException extends Exception{
 	public ComecaComNumerosException() {
 		super("Inválido - não deve começar com números");
 	}
-	
-	
 }
